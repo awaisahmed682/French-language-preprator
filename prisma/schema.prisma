@@ -1,0 +1,174 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum AuthProvider {
+  EMAIL
+  GOOGLE
+  GITHUB
+}
+
+enum CEFRLevel {
+  A1
+  A2
+  B1
+  B2
+  C1
+  C2
+}
+
+enum League {
+  BRONZE
+  SILVER
+  GOLD
+  DIAMOND
+}
+
+enum SrsItemType {
+  VOCAB
+  GRAMMAR
+  PHRASE
+  PHONEME
+}
+
+// Note: JSON data is stored as serialized strings (SQLite-compatible).
+// Fields ending in "Json" hold JSON.stringify() output: parse before use.
+
+model User {
+  id             String      @id @default(cuid())
+  name           String
+  email          String      @unique
+  passwordHash   String?
+  authProvider   AuthProvider @default(EMAIL)
+  currentLevel   CEFRLevel   @default(A1)
+  targetLevel    CEFRLevel   @default(C1)
+  nativeLanguage String      @default("en")
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+
+  progress      Progress?
+  gamification  Gamification?
+  srsReviews    SrsReview[]
+  aiHistory     AiHistory?
+  community     Community?
+  certificates  Certificate[]
+  submissions   Submission[]
+
+  @@index([email])
+  @@index([currentLevel])
+}
+
+model Progress {
+  id                  String   @id @default(cuid())
+  userId              String   @unique
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  completedLessons    String   @default("[]")
+  skillScores         String   @default("{}")
+  practiceTests       String   @default("[]")
+  certifications      String   @default("[]")
+  pronunciationScores String   @default("[]")
+  timeSpentMinutes    Int      @default(0)
+  updatedAt           DateTime @updatedAt
+}
+
+model Gamification {
+  id            String   @id @default(cuid())
+  userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  xp            Int      @default(0)
+  streakCurrent Int      @default(0)
+  streakLongest Int      @default(0)
+  dailyGoalXp   Int      @default(50)
+  dailyGoalMet  String   @default("[]")
+  badges        String   @default("[]")
+  league        League   @default(BRONZE)
+  updatedAt     DateTime @updatedAt
+}
+
+model SrsReview {
+  id           String     @id @default(cuid())
+  userId       String
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  itemId       String
+  itemType     SrsItemType
+  dueDate      DateTime
+  interval     Int        @default(1)
+  repetitions  Int        @default(0)
+  easeFactor   Float      @default(2.5)
+  lastReviewed DateTime?
+
+  @@unique([userId, itemId])
+  @@index([userId, dueDate])
+}
+
+model AiHistory {
+  id                String   @id @default(cuid())
+  userId            String   @unique
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  roleplaySessions  String   @default("[]")
+  explanations      String   @default("[]")
+  tutorConversations String  @default("[]")
+  updatedAt         DateTime @updatedAt
+}
+
+model Community {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  reviewsGiven Int     @default(0)
+  reputation  Int      @default(0)
+  updatedAt   DateTime @updatedAt
+}
+
+model Submission {
+  id            String    @id @default(cuid())
+  userId        String
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  kind          String // "writing" | "speaking"
+  content       String
+  audioUrl      String?
+  transcript    String?
+  level         CEFRLevel
+  status        String    @default("pending")
+  feedback      String?
+  feedbackScore Int?
+  reviewedBy    String?
+  reviewedAt    DateTime?
+  createdAt     DateTime  @default(now())
+
+  @@index([userId])
+  @@index([status])
+}
+
+model Certificate {
+  id               String   @id @default(cuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  level            CEFRLevel
+  score            Int
+  skillBreakdown   String
+  issuedAt         DateTime @default(now())
+  verificationCode String   @unique
+
+  @@index([userId])
+  @@index([verificationCode])
+}
+
+model LevelContent {
+  id            String    @id @default(cuid())
+  level         CEFRLevel @unique
+  grammar       String    @default("{}")
+  vocabulary    String    @default("{}")
+  pronunciation String    @default("{}")
+  test          String    @default("{}")
+  stories       String    @default("[]")
+  scenarios     String    @default("[]")
+  culturalNotes String    @default("[]")
+  bookMapping   String    @default("{}")
+  updatedAt     DateTime  @updatedAt
+}
