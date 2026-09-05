@@ -20,14 +20,14 @@ export function VocabItem({ item }: { item: VocabularyItem }) {
         {item.fr}
         {item.ipa ? <span className="ml-1 text-xs font-normal text-zinc-400">/{item.ipa}/</span> : null}
       </span>
-      <span className="text-sm text-zinc-500">
+      <span className="text-sm text-zinc-700 dark:text-zinc-200">
         {flipped ? item.example || item.en : "…"}
       </span>
-      <span className={`text-sm ${flipped ? "text-indigo-600 dark:text-indigo-400" : "text-zinc-400"}`}>
+      <span className={`text-sm ${flipped ? "text-indigo-600 dark:text-indigo-300" : "text-zinc-400"}`}>
         {item.en}
       </span>
       {item.example ? (
-        <span className="text-xs italic text-zinc-400 dark:text-zinc-500">
+        <span className="text-xs italic text-zinc-400 dark:text-zinc-700">
           {item.example}
           {item.exampleEn ? ` — ${item.exampleEn}` : ""}
         </span>

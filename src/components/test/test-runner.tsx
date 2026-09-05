@@ -80,7 +80,7 @@ export function TestRunner({ level, test }: { level: Level; test: TestDefinition
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
           {result.passed ? `${level} certificate earned!` : "Test not passed"}
         </h2>
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-zinc-700 dark:text-zinc-200">
           Score: <strong>{result.total}</strong> / {result.max} — passing threshold:{" "}
           {result.passing}
         </p>
@@ -104,7 +104,7 @@ export function TestRunner({ level, test }: { level: Level; test: TestDefinition
           ))}
         </div>
         {result.certificateId ? (
-          <p className="max-w-md text-sm text-zinc-500">
+          <p className="max-w-md text-sm text-zinc-700 dark:text-zinc-200">
             Next level unlocked! Your certificate is saved to your profile.
           </p>
         ) : null}
@@ -181,7 +181,7 @@ export function TestRunner({ level, test }: { level: Level; test: TestDefinition
           <h2 className="font-bold text-zinc-900 dark:text-zinc-50">
             Certification test {level}
           </h2>
-          <span className="text-xs text-zinc-500">
+          <span className="text-xs text-zinc-700 dark:text-zinc-200">
             {totalAnswered} / {totalQuestions} responses
           </span>
         </div>
@@ -196,7 +196,7 @@ export function TestRunner({ level, test }: { level: Level; test: TestDefinition
                   ? "bg-indigo-600 text-white"
                   : p.done
                     ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"
-                    : "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300"
+                    : "bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
               }`}
             >
               {p.label} {p.done ? "✓" : ""}
@@ -218,7 +218,7 @@ export function TestRunner({ level, test }: { level: Level; test: TestDefinition
                     {activePart === "listen" ? "Listening" : "Reading"} — Question {i + 1}
                   </span>
                   {selected !== undefined ? (
-                    <span className="text-xs font-medium text-emerald-600">Answered ✓</span>
+                    <span className="text-xs font-medium text-emerald-600 dark:text-emerald-300">Answered ✓</span>
                   ) : null}
                 </div>
                 {activePart === "listen" && q.audio ? (
@@ -272,7 +272,7 @@ export function TestRunner({ level, test }: { level: Level; test: TestDefinition
                     setWritingTexts((prev) => ({ ...prev, [task.id]: e.target.value }))
                   }
                 />
-                <span className={`text-xs ${words >= task.minWords ? "text-emerald-600" : "text-zinc-400"}`}>
+                <span className={`text-xs ${words >= task.minWords ? "text-emerald-600 dark:text-emerald-300" : "text-zinc-400"}`}>
                   {words} / {task.minWords} words
                 </span>
               </Card>
@@ -379,7 +379,7 @@ function SpeakingTasks({
                   </Button>
                 )}
                 {listening && activeId === task.id ? (
-                  <span className="text-sm text-rose-600">● Recording…</span>
+                  <span className="text-sm text-rose-600 dark:text-rose-300">● Recording…</span>
                 ) : null}
               </div>
             ) : null}
@@ -394,7 +394,7 @@ function SpeakingTasks({
                 setSpeakingTexts((prev) => ({ ...prev, [task.id]: e.target.value }))
               }
             />
-            <span className={`text-xs ${words >= 10 ? "text-emerald-600" : "text-zinc-400"}`}>
+            <span className={`text-xs ${words >= 10 ? "text-emerald-600 dark:text-emerald-300" : "text-zinc-400"}`}>
               {words} words captured
             </span>
           </Card>
@@ -452,7 +452,7 @@ function PronCoach({
               {score !== undefined ? (
                 <span
                   className={`text-xs font-bold ${
-                    score >= 80 ? "text-emerald-600" : score >= 50 ? "text-amber-600" : "text-rose-600"
+                    score >= 80 ? "text-emerald-600 dark:text-emerald-300" : score >= 50 ? "text-amber-600 dark:text-amber-300" : "text-rose-600 dark:text-rose-300"
                   }`}
                 >
                   {score}/100
@@ -479,7 +479,7 @@ function PronCoach({
               ) : null}
             </div>
             {pronCtx === q.id && !listening && result?.transcript ? (
-              <p className="text-sm text-zinc-500">You said: « {result.transcript} »</p>
+              <p className="text-sm text-zinc-700 dark:text-zinc-200">You said: « {result.transcript} »</p>
             ) : null}
             <input
               className={inputCls}

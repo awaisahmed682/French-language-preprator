@@ -14,7 +14,7 @@ export default async function RoleplayPage() {
     <div className="mx-auto flex max-w-3xl flex-col gap-6">
       <div>
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">Roleplay</h1>
-        <p className="mt-1 text-sm text-zinc-500">
+        <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-200">
           Scenarios based on your level {session.currentLevel} and the next one.
         </p>
       </div>

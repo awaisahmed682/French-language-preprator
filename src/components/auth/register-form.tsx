@@ -26,7 +26,7 @@ export function RegisterForm() {
           required
         />
         {state.fieldErrors?.name ? (
-          <span className="text-xs text-rose-600">{state.fieldErrors.name.join(", ")}</span>
+          <span className="text-xs text-rose-600 dark:text-rose-300">{state.fieldErrors.name.join(", ")}</span>
         ) : null}
       </Field>
       <Field label="Email address">
@@ -40,7 +40,7 @@ export function RegisterForm() {
           required
         />
         {state.fieldErrors?.email ? (
-          <span className="text-xs text-rose-600">{state.fieldErrors.email.join(", ")}</span>
+          <span className="text-xs text-rose-600 dark:text-rose-300">{state.fieldErrors.email.join(", ")}</span>
         ) : null}
       </Field>
       <Field label="Password" hint="At least 8 characters.">
@@ -52,7 +52,7 @@ export function RegisterForm() {
           required
         />
         {state.fieldErrors?.password ? (
-          <span className="text-xs text-rose-600">{state.fieldErrors.password.join(", ")}</span>
+          <span className="text-xs text-rose-600 dark:text-rose-300">{state.fieldErrors.password.join(", ")}</span>
         ) : null}
       </Field>
       <div className="grid gap-4 sm:grid-cols-2">
@@ -79,7 +79,7 @@ export function RegisterForm() {
           </select>
         </Field>
       </div>
-      <label className="-mt-1 flex cursor-pointer items-center gap-2 text-sm text-zinc-600 dark:text-zinc-300">
+      <label className="-mt-1 flex cursor-pointer items-center gap-2 text-sm text-zinc-700 dark:text-zinc-300">
         <input
           type="checkbox"
           name="rememberMe"

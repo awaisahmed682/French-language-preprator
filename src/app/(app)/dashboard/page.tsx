@@ -45,7 +45,7 @@ export default async function DashboardPage() {
           <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
             Hello, {session.name.split(" ")[0]} 👋
           </h1>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-200">
             You are working at level{" "}
             <strong className="text-zinc-800 dark:text-zinc-200">
               {session.currentLevel}
@@ -67,28 +67,28 @@ export default async function DashboardPage() {
 
       <section className="grid gap-4 lg:grid-cols-3">
         <Card className="flex flex-col gap-3">
-          <span className="text-xs font-medium uppercase tracking-wide text-zinc-500">
+          <span className="text-xs font-medium uppercase tracking-wide text-zinc-700 dark:text-zinc-200">
             Current level
           </span>
           <div className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${levelMeta.color} text-xl font-bold text-white`}>
             {session.currentLevel}
           </div>
           <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">{levelMeta.title}</p>
-          <p className="text-xs text-zinc-500">{levelMeta.subtitle}</p>
+          <p className="text-xs text-zinc-700 dark:text-zinc-200">{levelMeta.subtitle}</p>
           <ProgressBar value={currentIdx + 1} max={targetIdx + 1} className="mt-auto" />
-          <span className="text-xs text-zinc-500">
+          <span className="text-xs text-zinc-700 dark:text-zinc-200">
             Progress toward target: {levelProgressPct}%
           </span>
         </Card>
 
         <Card className="flex flex-col gap-3">
-          <span className="text-xs font-medium uppercase tracking-wide text-zinc-500">
+          <span className="text-xs font-medium uppercase tracking-wide text-zinc-700 dark:text-zinc-200">
             Level XP & league
           </span>
           <div className="flex items-end justify-between">
             <span className="text-3xl font-extrabold text-zinc-900 dark:text-zinc-50">
               {snapshot.gamification.xp.toLocaleString("en-US")}
-              <span className="ml-1 text-base font-medium text-zinc-500">XP</span>
+              <span className="ml-1 text-base font-medium text-zinc-700 dark:text-zinc-200">XP</span>
             </span>
             <Badge tone="amber">🏆 {LEAGUE_LABEL[snapshot.gamification.league]}</Badge>
           </div>
@@ -98,7 +98,7 @@ export default async function DashboardPage() {
               max={snapshot.gamification.xp + snapshot.gamification.xpToNextLeague}
             />
           </div>
-          <span className="text-xs text-zinc-500">
+          <span className="text-xs text-zinc-700 dark:text-zinc-200">
             {snapshot.gamification.xpToNextLeague > 0
               ? `${snapshot.gamification.xpToNextLeague} XP before the next league.`
               : "Max league reached!"}
@@ -112,7 +112,7 @@ export default async function DashboardPage() {
         </Card>
 
         <Card className="flex flex-col gap-3">
-          <span className="text-xs font-medium uppercase tracking-wide text-zinc-500">
+          <span className="text-xs font-medium uppercase tracking-wide text-zinc-700 dark:text-zinc-200">
             Skills
           </span>
           <div className="flex flex-1 flex-col gap-2">
@@ -122,18 +122,18 @@ export default async function DashboardPage() {
               );
               return (
                 <div key={skill} className="flex items-center gap-2 text-sm">
-                  <span className="w-24 shrink-0 text-zinc-600 dark:text-zinc-300">
+                  <span className="w-24 shrink-0 text-zinc-700 dark:text-zinc-300">
                     {SKILL_LABEL[skill]}
                   </span>
                   <ProgressBar value={score} max={100} className="flex-1" />
-                  <span className="w-8 text-right text-xs tabular-nums text-zinc-500">
+                  <span className="w-8 text-right text-xs tabular-nums text-zinc-700 dark:text-zinc-200">
                     {score}%
                   </span>
                 </div>
               );
             })}
             {pronunciationAvg !== null ? (
-              <p className="text-xs text-zinc-500">
+              <p className="text-xs text-zinc-700 dark:text-zinc-200">
                 @ Pronunciation average: {pronunciationAvg}/100
               </p>
             ) : null}
@@ -145,7 +145,7 @@ export default async function DashboardPage() {
         <Card className="flex flex-col gap-3">
           <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">Badges</h2>
           {badges.length === 0 ? (
-            <p className="text-sm text-zinc-500">
+            <p className="text-sm text-zinc-700 dark:text-zinc-200">
               Complete your first activity to unlock a badge.
             </p>
           ) : (
@@ -166,11 +166,11 @@ export default async function DashboardPage() {
         <Card className="flex flex-col gap-3">
           <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">Recent tests</h2>
           {recentTests.length === 0 ? (
-            <p className="text-sm text-zinc-500">
+            <p className="text-sm text-zinc-700 dark:text-zinc-200">
               No tests yet.{" "}
               <Link
                 href="/practice"
-                className="font-medium text-indigo-600 dark:text-indigo-400"
+                className="font-medium text-indigo-600 dark:text-indigo-300"
               >
                 Practice
               </Link>
@@ -185,7 +185,7 @@ export default async function DashboardPage() {
                   <span className="font-medium">
                     {t.kind === "test" ? "Certification test" : "Practice"} · {t.level}
                   </span>
-                  <span className="text-xs text-zinc-500">
+                  <span className="text-xs text-zinc-700 dark:text-zinc-200">
                     {Math.round((t.score / t.max) * 100)}%
                   </span>
                 </li>
@@ -197,7 +197,7 @@ export default async function DashboardPage() {
         <Card className="flex flex-col gap-3">
           <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">Certificates</h2>
           {snapshot.certificates.length === 0 ? (
-            <p className="text-sm text-zinc-500">
+            <p className="text-sm text-zinc-700 dark:text-zinc-200">
               Take a certification test to earn a verifiable certificate.
             </p>
           ) : (

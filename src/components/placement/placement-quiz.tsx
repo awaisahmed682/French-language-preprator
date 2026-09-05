@@ -63,21 +63,21 @@ export function PlacementQuiz({ questions }: { questions: PlacementQuestion[] })
         <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
           Recommended level: {recommended}
         </h2>
-        <p className="text-sm text-zinc-500">{LEVEL_META[recommended].title}</p>
+        <p className="text-sm text-zinc-700 dark:text-zinc-200">{LEVEL_META[recommended].title}</p>
         <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
           {LEVEL_ORDER.map((l) => {
             const c = correctPerLevel[l];
             return (
               <div key={l} className={`rounded-lg p-2 text-center ${l === recommended ? "bg-indigo-50 ring-2 ring-indigo-500 dark:bg-indigo-950/60" : "bg-zinc-50 dark:bg-zinc-900"}`}>
                 <p className="font-bold text-zinc-800 dark:text-zinc-100">{l}</p>
-                <p className="text-xs text-zinc-500">
+                <p className="text-xs text-zinc-700 dark:text-zinc-200">
                   {c.correct}/{c.total}
                 </p>
               </div>
             );
           })}
         </div>
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-zinc-700 dark:text-zinc-200">
           You can adjust this level at any time by working through the other levels.
         </p>
         <div className="flex justify-center gap-3">
@@ -91,7 +91,7 @@ export function PlacementQuiz({ questions }: { questions: PlacementQuestion[] })
 
   return (
     <Card className="mx-auto flex max-w-2xl flex-col gap-4">
-      <div className="flex items-center justify-between text-sm text-zinc-500">
+      <div className="flex items-center justify-between text-sm text-zinc-700 dark:text-zinc-200">
         <span>
           Question {index + 1} / {questions.length}
         </span>

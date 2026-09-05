@@ -37,7 +37,7 @@ export function WritingPromptCard({
     <Card className="flex flex-col gap-3">
       <div>
         <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">{title}</h3>
-        <p className="mt-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">{task}</p>
+        <p className="mt-1 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{task}</p>
         <p className="mt-1 text-xs text-zinc-400">Goal: at least {minWords} words.</p>
       </div>
       <textarea
@@ -47,7 +47,7 @@ export function WritingPromptCard({
         onChange={(e) => setText(e.target.value)}
       />
       <div className="flex items-center justify-between gap-3">
-        <span className={`text-xs ${words >= minWords ? "text-emerald-600" : "text-zinc-400"}`}>
+        <span className={`text-xs ${words >= minWords ? "text-emerald-600 dark:text-emerald-300" : "text-zinc-400"}`}>
           {words} / {minWords} words
         </span>
         <Button onClick={submit} disabled={busy || words < Math.min(5, minWords)}>

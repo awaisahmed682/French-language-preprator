@@ -48,7 +48,7 @@ export default async function CertificatePage({ params }: { params: Promise<Para
               <p className="font-serif text-3xl font-bold text-zinc-900 dark:text-zinc-50">
                 {certificate.name}
               </p>
-              <p className="text-sm text-zinc-500">
+              <p className="text-sm text-zinc-700 dark:text-zinc-200">
                 for mastering the {level} level of French (French as a foreign language), modeled
                 on TEF/TCF.
               </p>
@@ -79,7 +79,7 @@ export default async function CertificatePage({ params }: { params: Promise<Para
               </div>
               <div className="rounded-xl bg-zinc-50 p-3 dark:bg-zinc-900">
                 <p className="text-xs text-zinc-400">Total score</p>
-                <p className="font-bold text-emerald-600">{certificate.score}</p>
+                <p className="font-bold text-emerald-600 dark:text-emerald-300">{certificate.score}</p>
               </div>
             </div>
 
@@ -95,7 +95,7 @@ export default async function CertificatePage({ params }: { params: Promise<Para
         <div className="mt-8 text-center">
           <Link
             href="/"
-            className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400"
+            className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-300"
           >
             ← Back to Français Prépa
           </Link>

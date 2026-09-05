@@ -108,7 +108,7 @@ export function CommunityPanel({
 
       {(tab === "feed" ? submissions : mySubmissions).length === 0 ? (
         <Card>
-          <p className="text-sm text-zinc-500">
+          <p className="text-sm text-zinc-700 dark:text-zinc-200">
             {tab === "mine"
               ? "You haven't published anything yet."
               : "No posts yet. Be the first!"}
@@ -119,10 +119,10 @@ export function CommunityPanel({
           <Card key={s.id} className="flex flex-col gap-3">
             <div className="flex flex-wrap items-center gap-2 text-xs">
               <span className="font-semibold text-zinc-800 dark:text-zinc-100">{s.author}</span>
-              <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-zinc-500 dark:bg-zinc-800">
+              <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-zinc-700 dark:text-zinc-200 dark:bg-zinc-800">
                 {s.level}
               </span>
-              <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-zinc-500 dark:bg-zinc-800">
+              <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-zinc-700 dark:text-zinc-200 dark:bg-zinc-800">
                 {s.kind === "writing" ? "writing" : "speaking"}
               </span>
               {s.status === "pending" ? (
@@ -137,7 +137,7 @@ export function CommunityPanel({
             </div>
             <p className="text-sm leading-relaxed text-zinc-800 dark:text-zinc-100">{s.content}</p>
             {s.feedback ? (
-              <p className="text-sm text-zinc-500 italic">« {s.feedback} »</p>
+              <p className="text-sm text-zinc-700 dark:text-zinc-200 italic">« {s.feedback} »</p>
             ) : null}
             <SpeakButton text={s.content.slice(0, 400)} label="Listen" />
             {tab === "feed" && s.status === "pending" ? (
@@ -155,7 +155,7 @@ function ReviewForm({ onReview }: { onReview: (score: number, feedback: string) 
   const [feedback, setFeedback] = useState("");
   return (
     <div className="flex flex-col gap-2 border-t border-zinc-100 pt-3 dark:border-zinc-800">
-      <p className="text-xs font-medium text-zinc-500">Give feedback (published + reputation)</p>
+      <p className="text-xs font-medium text-zinc-700 dark:text-zinc-200">Give feedback (published + reputation)</p>
       <div className="flex flex-wrap items-center gap-3">
         <label className="text-xs text-zinc-400">
           Rating
@@ -167,7 +167,7 @@ function ReviewForm({ onReview }: { onReview: (score: number, feedback: string) 
             onChange={(e) => setScore(Number(e.target.value))}
             className="ml-2 align-middle"
           />
-          <span className="ml-1 font-semibold text-zinc-700">{score}</span>
+          <span className="ml-1 font-semibold text-zinc-700 dark:text-zinc-200">{score}</span>
         </label>
         <input
           className={inputCls + " flex-1"}

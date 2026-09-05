@@ -65,7 +65,7 @@ export default async function ReviewPage() {
     <div className="flex flex-col gap-6">
       <div>
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">Spaced review</h1>
-        <p className="mt-1 text-sm text-zinc-500">
+        <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-200">
           {cards.length} card(s) due today. Spaced repetition helps you
           lock in vocabulary.
         </p>

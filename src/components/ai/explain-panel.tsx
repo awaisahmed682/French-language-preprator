@@ -48,7 +48,7 @@ export function ExplainPanel({ level }: { level: string }) {
             <button
               key={s}
               onClick={() => ask(s)}
-              className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs text-zinc-600 transition hover:border-indigo-300 hover:text-indigo-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"
+              className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs text-zinc-700 transition hover:border-indigo-300 hover:text-indigo-600 dark:text-indigo-300 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"
             >
               {s}
             </button>

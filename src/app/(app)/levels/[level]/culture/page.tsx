@@ -18,7 +18,7 @@ export default async function CulturePage({ params }: { params: Promise<Params> 
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <Link href={`/levels/${slug}`} className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400">
+        <Link href={`/levels/${slug}`} className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-300">
           ← Level {level}
         </Link>
         <h1 className="mt-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">

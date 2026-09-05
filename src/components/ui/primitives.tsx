@@ -161,7 +161,7 @@ export function Field({
     <label className="flex flex-col gap-1.5">
       <span className="text-sm font-medium text-zinc-800 dark:text-zinc-200">{label}</span>
       {children}
-      {hint ? <span className="text-xs text-zinc-500">{hint}</span> : null}
+      {hint ? <span className="text-xs text-zinc-700 dark:text-zinc-300">{hint}</span> : null}
     </label>
   );
 }
@@ -180,12 +180,12 @@ export function StatCard({
 }) {
   return (
     <Card className="flex flex-col gap-1 p-4">
-      <span className="text-xs font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+      <span className="text-xs font-medium uppercase tracking-wide text-zinc-700 dark:text-zinc-400">
         {label}
       </span>
       <span className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
         {value}
-        {unit ? <span className="ml-0.5 text-sm font-medium text-zinc-500">{unit}</span> : null}
+        {unit ? <span className="ml-0.5 text-sm font-medium text-zinc-700 dark:text-zinc-200">{unit}</span> : null}
       </span>
     </Card>
   );

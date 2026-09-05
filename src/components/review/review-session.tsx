@@ -29,7 +29,7 @@ export function ReviewSession({ cards }: { cards: ReviewCard[] }) {
     return (
       <Card className="flex flex-col items-center gap-3 py-10 text-center">
         <span className="text-4xl">🎉</span>
-        <p className="text-sm text-zinc-500">Nothing to review right now!</p>
+        <p className="text-sm text-zinc-700 dark:text-zinc-200">Nothing to review right now!</p>
         <p className="text-xs text-zinc-400">
           Add vocabulary from the level pages to fill your review queue.
         </p>
@@ -42,7 +42,7 @@ export function ReviewSession({ cards }: { cards: ReviewCard[] }) {
       <Card className="flex flex-col items-center gap-3 py-10 text-center">
         <span className="text-4xl">🏁</span>
         <p className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">Review complete!</p>
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-zinc-700 dark:text-zinc-200">
           {cards.length} cards reviewed. Easy cards will come back later; the others
           will return soon.
         </p>
@@ -65,7 +65,7 @@ export function ReviewSession({ cards }: { cards: ReviewCard[] }) {
 
   return (
     <Card className="mx-auto flex max-w-2xl flex-col gap-5">
-      <div className="flex items-center justify-between text-sm text-zinc-500">
+      <div className="flex items-center justify-between text-sm text-zinc-700 dark:text-zinc-200">
         <span>
           Card {Math.min(index + 1, cards.length)} / {cards.length}
         </span>
@@ -90,7 +90,7 @@ export function ReviewSession({ cards }: { cards: ReviewCard[] }) {
             {card.itemType !== "GRAMMAR" ? (
               <SpeakButton text={card.front} label="" />
             ) : null}
-            <p className="text-sm text-zinc-500">{card.back}</p>
+            <p className="text-sm text-zinc-700 dark:text-zinc-200">{card.back}</p>
           </div>
         ) : (
           <Button

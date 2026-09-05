@@ -121,7 +121,7 @@ export function RoleplayPanel({
         </>
       ) : (
         <Card>
-          <p className="text-sm text-zinc-500">No scenario available at this level.</p>
+          <p className="text-sm text-zinc-700 dark:text-zinc-200">No scenario available at this level.</p>
         </Card>
       )}
     </div>

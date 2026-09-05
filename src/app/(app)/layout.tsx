@@ -17,7 +17,7 @@ export default async function ProtectedLayout({
         {children}
       </main>
       <footer className="border-t border-zinc-200 py-6 dark:border-zinc-800">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 text-xs text-zinc-500">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 text-xs text-zinc-700 dark:text-zinc-200">
           <span>
             Signed in as {session.name} · Français Prépa ©{" "}
             {new Date().getFullYear()}

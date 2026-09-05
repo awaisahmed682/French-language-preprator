@@ -10,12 +10,12 @@ export default async function ProfilePage() {
     <div className="mx-auto flex max-w-2xl flex-col gap-6">
       <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">My profile</h1>
       <Card className="flex flex-col gap-1">
-        <span className="text-xs font-medium uppercase tracking-wide text-zinc-500">
+        <span className="text-xs font-medium uppercase tracking-wide text-zinc-700 dark:text-zinc-200">
           Account
         </span>
         <p className="font-semibold text-zinc-900 dark:text-zinc-50">{session.name}</p>
-        <p className="text-sm text-zinc-500">{session.email}</p>
-        <p className="mt-2 text-sm text-zinc-500">
+        <p className="text-sm text-zinc-700 dark:text-zinc-200">{session.email}</p>
+        <p className="mt-2 text-sm text-zinc-700 dark:text-zinc-200">
           Current level: <strong>{session.currentLevel}</strong> · Target:{" "}
           <strong>{session.targetLevel}</strong>
         </p>
@@ -31,7 +31,7 @@ export default async function ProfilePage() {
       <Card className="flex items-center justify-between">
         <div>
           <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">Session</h2>
-          <p className="text-sm text-zinc-500">Sign out from this device.</p>
+          <p className="text-sm text-zinc-700 dark:text-zinc-200">Sign out from this device.</p>
         </div>
         <LogoutButton />
       </Card>

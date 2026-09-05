@@ -16,6 +16,17 @@ export const metadata: Metadata = {
   title: "Français Prépa — Learn French for TEF/TCF",
   description:
     "A complete A1–C2 French learning platform aligned with TEF Canada and TCF Canada: lessons, pronunciation, practice tests and certificates.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Français Prépa",
+  },
+  icons: {
+    icon: "/icons/icon-192x192.png",
+    shortcut: "/icons/icon-96x96.png",
+    apple: "/icons/icon-180x180.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -24,6 +35,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#c9a337" />
+        <link rel="apple-touch-icon" href="/icons/icon-180x180.png" />
+      </head>
       <body className="min-h-full flex flex-col">
         <div className="flex flex-1 flex-col animate-fade-in">{children}</div>
       </body>

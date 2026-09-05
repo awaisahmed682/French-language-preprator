@@ -12,7 +12,7 @@ export function PracticeSession({ level, exercises }: { level: Level; exercises:
   if (exercises.length === 0) {
     return (
       <Card>
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-zinc-700 dark:text-zinc-200">
           No exercises available for your level right now.
         </p>
       </Card>
@@ -21,7 +21,7 @@ export function PracticeSession({ level, exercises }: { level: Level; exercises:
 
   return (
     <div className="flex flex-col gap-5">
-      <Card className="flex flex-wrap items-center gap-2 text-sm text-zinc-600 dark:text-zinc-300">
+      <Card className="flex flex-wrap items-center gap-2 text-sm text-zinc-700 dark:text-zinc-300">
         <span className="font-medium text-zinc-900 dark:text-zinc-50">
           Practice session {level}
         </span>

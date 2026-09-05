@@ -19,13 +19,13 @@ export default async function VocabularyPage({ params }: { params: Promise<Param
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <Link href={`/levels/${slug}`} className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400">
+        <Link href={`/levels/${slug}`} className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-300">
           ← Level {level}
         </Link>
         <h1 className="mt-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
           Vocabulary — {level}
         </h1>
-        <p className="mt-1 text-sm text-zinc-500">
+        <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-200">
           Click a card to reveal an example. Listen to the words and add them to spaced review.
         </p>
       </div>
@@ -66,7 +66,7 @@ export default async function VocabularyPage({ params }: { params: Promise<Param
             >
               <div>
                 <p className="font-medium text-zinc-900 dark:text-zinc-50">{p.fr}</p>
-                <p className="text-sm text-zinc-500">{p.en}</p>
+                <p className="text-sm text-zinc-700 dark:text-zinc-200">{p.en}</p>
               </div>
               <div className="flex shrink-0 gap-1">
                 <SpeakButton text={p.fr} label="" size="sm" />

@@ -14,7 +14,7 @@ export default async function LearnIndexPage({ params }: { params: Promise<Param
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <Link href={`/levels/${slug}`} className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400">
+        <Link href={`/levels/${slug}`} className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-300">
           ← Level {level}
         </Link>
         <h1 className="mt-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
@@ -33,7 +33,7 @@ export default async function LearnIndexPage({ params }: { params: Promise<Param
               Lesson {String(i + 1).padStart(2, "0")}
             </span>
             <h2 className="mt-1 font-semibold text-zinc-900 dark:text-zinc-50">{topic.title}</h2>
-            <p className="mt-1 text-sm text-zinc-500">{topic.exercises.length} exercises</p>
+            <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-200">{topic.exercises.length} exercises</p>
           </Link>
         ))}
       </div>

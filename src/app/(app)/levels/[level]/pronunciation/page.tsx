@@ -21,7 +21,7 @@ export default async function PronunciationPage({ params }: { params: Promise<Pa
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <Link href={`/levels/${slug}`} className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400">
+        <Link href={`/levels/${slug}`} className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-300">
           ← Level {level}
         </Link>
         <h1 className="mt-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
@@ -56,7 +56,7 @@ export default async function PronunciationPage({ params }: { params: Promise<Pa
                 <span className="rounded-lg bg-indigo-50 px-2.5 py-1 font-mono text-lg font-bold text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">
                   /{ph.symbol}/
                 </span>
-                <span className="text-sm font-medium text-zinc-500">{ph.name}</span>
+                <span className="text-sm font-medium text-zinc-700 dark:text-zinc-200">{ph.name}</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {ph.examples.map((ex) => (

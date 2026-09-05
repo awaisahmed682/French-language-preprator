@@ -51,7 +51,7 @@ export function SpeakingPromptCard({
     <Card className="flex flex-col gap-3">
       <div>
         <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">{title}</h3>
-        <p className="mt-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">{scenario}</p>
+        <p className="mt-1 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{scenario}</p>
         <p className="mt-1 text-xs text-zinc-400">Tip: {hint}</p>
       </div>
       <SpeakButton text={scenario} label="Listen to the scenario" />
@@ -72,9 +72,9 @@ export function SpeakingPromptCard({
             </Button>
           )
         ) : (
-          <p className="text-xs text-zinc-500">Speech recognition isn&apos;t supported here.</p>
+          <p className="text-xs text-zinc-700 dark:text-zinc-200">Speech recognition isn&apos;t supported here.</p>
         )}
-        {listening ? <span className="text-sm text-rose-600">● Recording…</span> : null}
+        {listening ? <span className="text-sm text-rose-600 dark:text-rose-300">● Recording…</span> : null}
       </div>
       {transcript ? (
         <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-3 text-sm text-zinc-800 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200">

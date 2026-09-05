@@ -41,7 +41,7 @@ export function TextTaskRunner({
     <Card className="flex flex-col gap-5">
       <div>
         <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-50">{title}</h2>
-        {subtitle ? <p className="mt-1 text-sm text-zinc-500">{subtitle}</p> : null}
+        {subtitle ? <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-200">{subtitle}</p> : null}
       </div>
       {audio ? (
         <div className="flex items-center gap-2 rounded-xl bg-indigo-50 p-3 dark:bg-indigo-950/40">
@@ -50,7 +50,7 @@ export function TextTaskRunner({
           </span>
           <SpeakButton text={audio} label="Play audio" variant="primary" size="sm" />
           {saved ? (
-            <span className="ml-auto text-xs font-medium text-emerald-600">Done ✓</span>
+            <span className="ml-auto text-xs font-medium text-emerald-600 dark:text-emerald-300">Done ✓</span>
           ) : null}
         </div>
       ) : null}

@@ -11,7 +11,7 @@ export default async function LevelsPage() {
     <div className="flex flex-col gap-6">
       <div>
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">Level roadmap</h1>
-        <p className="mt-1 text-sm text-zinc-500">
+        <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-200">
           Your current level: <strong>{session.currentLevel}</strong>. Complete the lessons, then
           pass the certification test to advance.
         </p>
@@ -52,10 +52,10 @@ export default async function LevelsPage() {
                 )}
               </div>
               <h2 className="mt-3 font-semibold text-zinc-900 dark:text-zinc-50">{meta.title}</h2>
-              <p className="mt-1 line-clamp-2 text-sm text-zinc-600 dark:text-zinc-300">
+              <p className="mt-1 line-clamp-2 text-sm text-zinc-700 dark:text-zinc-300">
                 {meta.subtitle}
               </p>
-              <div className="mt-4 flex flex-wrap gap-1.5 text-xs text-zinc-500">
+              <div className="mt-4 flex flex-wrap gap-1.5 text-xs text-zinc-700 dark:text-zinc-200">
                 <span className="rounded-full bg-zinc-100 px-2 py-0.5 dark:bg-zinc-800">
                   {content.grammar.length} lessons
                 </span>

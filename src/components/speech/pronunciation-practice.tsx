@@ -73,7 +73,7 @@ export function PronunciationPractice({
   if (!supported) {
     return (
       <Card>
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-zinc-700 dark:text-zinc-200">
           Your browser doesn&apos;t support speech recognition. You can still listen and repeat aloud.
         </p>
       </Card>
@@ -92,7 +92,7 @@ export function PronunciationPractice({
         <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
           Pronunciation session complete
         </h3>
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-zinc-700 dark:text-zinc-200">
           Average score: <strong>{avg}%</strong> over {words.length} words
         </p>
         <div className="flex flex-wrap items-center justify-center gap-2">
@@ -101,10 +101,10 @@ export function PronunciationPractice({
               key={i}
               className={`inline-flex h-8 w-8 items-center justify-center rounded-lg text-xs font-bold ${
                 s >= 80
-                  ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-950"
+                  ? "bg-emerald-100 text-emerald-700 dark:text-emerald-300 dark:bg-emerald-950"
                   : s >= 50
-                    ? "bg-amber-100 text-amber-700 dark:bg-amber-950"
-                    : "bg-rose-100 text-rose-700 dark:bg-rose-950"
+                    ? "bg-amber-100 text-amber-700 dark:text-amber-300 dark:bg-amber-950"
+                    : "bg-rose-100 text-rose-700 dark:text-rose-300 dark:bg-rose-950"
               }`}
             >
               {s}
@@ -137,7 +137,7 @@ export function PronunciationPractice({
       </div>
       <SpeakButton text={current[0]} label="Listen to the model" size="md" variant="primary" />
       <div className="flex flex-col items-center gap-2">
-        <p className="text-xs text-zinc-500">
+        <p className="text-xs text-zinc-700 dark:text-zinc-200">
           {listening
             ? "🎤 Listening… say the word, then stop."
             : "Press Record, then say the word aloud."}
@@ -155,21 +155,21 @@ export function PronunciationPractice({
         </div>
       </div>
       {result && !listening ? (
-        <p className="max-w-sm text-sm text-zinc-600 dark:text-zinc-300">
+        <p className="max-w-sm text-sm text-zinc-700 dark:text-zinc-300">
           You said: « {result.transcript} » (confidence {Math.round(result.confidence * 100)}%)
         </p>
       ) : null}
       {grade !== null ? (
         <div className="w-full max-w-xs">
           <div className="mb-1 flex justify-between text-xs">
-            <span className="text-zinc-500">Result</span>
+            <span className="text-zinc-700 dark:text-zinc-200">Result</span>
             <span
               className={
                 grade >= 80
-                  ? "text-emerald-600"
+                  ? "text-emerald-600 dark:text-emerald-300"
                   : grade >= 50
-                    ? "text-amber-600"
-                    : "text-rose-600"
+                    ? "text-amber-600 dark:text-amber-300"
+                    : "text-rose-600 dark:text-rose-300"
               }
             >
               {grade >= 80 ? "Excellent!" : grade >= 50 ? "Not bad" : "Try again"}

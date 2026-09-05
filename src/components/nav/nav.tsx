@@ -47,7 +47,7 @@ export function AppNav({
                   "whitespace-nowrap rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",
                   active
                     ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300"
-: "text-zinc-600 hover:bg-zinc-200/80 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+: "text-zinc-700 hover:bg-zinc-200/80 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
                 )}
               >
                 {link.label}
@@ -68,7 +68,7 @@ export function AppNav({
               "rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",
               pathname === "/profile"
                 ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300"
-                : "text-zinc-600 hover:bg-zinc-200/80 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+                : "text-zinc-700 hover:bg-zinc-200/80 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
             )}
           >
             Profile

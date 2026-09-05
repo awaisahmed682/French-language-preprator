@@ -9,7 +9,7 @@ export function ScenarioCard({ scenario }: { scenario: Scenario }) {
     <Card className="flex flex-col gap-3">
       <div>
         <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">{scenario.title}</h3>
-        <p className="mt-1 text-sm text-zinc-500">{scenario.setting}</p>
+        <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-200">{scenario.setting}</p>
       </div>
       <div className="flex flex-col gap-2">
         {scenario.dialogue.map((line, i) => (

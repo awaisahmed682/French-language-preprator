@@ -29,7 +29,7 @@ export default async function LevelPortalPage({ params }: { params: Promise<Para
   return (
     <div className="flex flex-col gap-6">
       <header>
-        <Link href="/levels" className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400">
+        <Link href="/levels" className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-300">
           ← All levels
         </Link>
         <div className="mt-3 flex flex-wrap items-center gap-4">
@@ -38,7 +38,7 @@ export default async function LevelPortalPage({ params }: { params: Promise<Para
           </span>
           <div>
             <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">{meta.title}</h1>
-            <p className="text-sm text-zinc-500">{meta.subtitle}</p>
+            <p className="text-sm text-zinc-700 dark:text-zinc-200">{meta.subtitle}</p>
           </div>
         </div>
       </header>
@@ -46,23 +46,23 @@ export default async function LevelPortalPage({ params }: { params: Promise<Para
       <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 [&>a]:min-w-0">
         <Link href={`/levels/${slug}/learn`} className="rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
           <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">📘 Grammar</h2>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-200">
             {doneGrammar}/{content.grammar.length} lessons completed
           </p>
         </Link>
         <Link href={`/levels/${slug}/vocabulary`} className="rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
           <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">📖 Vocabulary</h2>
-          <p className="mt-1 text-sm text-zinc-500">{content.vocabulary.map((v) => v.theme).join(" · ")}</p>
+          <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-200">{content.vocabulary.map((v) => v.theme).join(" · ")}</p>
         </Link>
         <Link href={`/levels/${slug}/pronunciation`} className="rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
           <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">🗣️ Pronunciation</h2>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-200">
             {content.pronunciation.phonemes.length} phonemes · {content.pronunciation.minimalPairs.length} minimal pairs
           </p>
         </Link>
         <Link href={`/levels/${slug}/test`} className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-zinc-900 ${levelPassed ? "border-emerald-300 bg-emerald-50 dark:border-emerald-800" : "border-zinc-200 bg-white hover:border-indigo-300 dark:border-zinc-800"}`}>
           <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">🏅 Certification test</h2>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-200">
             {levelPassed ? `Passed — ${certificates[0].score} pts` : "Not passed yet"}
           </p>
         </Link>
@@ -83,13 +83,13 @@ export default async function LevelPortalPage({ params }: { params: Promise<Para
                   <span className="min-w-0 flex-1 truncate font-medium text-zinc-900 dark:text-zinc-50">{topic.title}</span>
                   <span className={isDone ? "text-emerald-500" : "text-zinc-300"}>{isDone ? "✓" : "○"}</span>
                 </div>
-                <p className="mt-1 truncate text-sm text-zinc-500">{topic.bookChapters}</p>
+                <p className="mt-1 truncate text-sm text-zinc-700 dark:text-zinc-200">{topic.bookChapters}</p>
                 <p className="mt-1 text-xs text-zinc-400">{topic.exercises.length} exercises</p>
               </Link>
             );
           })}
         </div>
-        <Link href={`/levels/${slug}/learn`} className="mt-3 inline-block text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400">
+        <Link href={`/levels/${slug}/learn`} className="mt-3 inline-block text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-300">
           See all {content.grammar.length} lessons →
         </Link>
       </section>
@@ -124,7 +124,7 @@ function MiniLink({
     >
       <span className="text-2xl">{icon}</span>
       <h2 className="mt-2 font-semibold text-zinc-900 dark:text-zinc-50">{title}</h2>
-      <p className="mt-1 text-sm text-zinc-500">{count} items</p>
+      <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-200">{count} items</p>
     </Link>
   );
 }

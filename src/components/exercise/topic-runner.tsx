@@ -38,7 +38,7 @@ export function TopicRunner({
           ⭐
         </div>
         <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">Lesson complete!</h2>
-        <p className="max-w-sm text-sm text-zinc-500">
+        <p className="max-w-sm text-sm text-zinc-700 dark:text-zinc-200">
           Your progress has been saved and XP awarded. Move on to the next lesson or
           keep reviewing.
         </p>
@@ -58,7 +58,7 @@ export function TopicRunner({
     <div className="flex flex-col gap-6">
       <Card className="flex flex-col gap-4">
         <div>
-          <span className="text-xs font-medium uppercase tracking-wide text-indigo-600 dark:text-indigo-400">
+          <span className="text-xs font-medium uppercase tracking-wide text-indigo-600 dark:text-indigo-300">
             Grammar lesson
           </span>
           <h1 className="mt-1 text-2xl font-bold text-zinc-900 dark:text-zinc-50">{topic.title}</h1>
@@ -76,15 +76,15 @@ export function TopicRunner({
             <table className="w-full text-sm">
               <thead className="bg-zinc-50 text-left dark:bg-zinc-900">
                 <tr>
-                  <th className="px-3 py-2 font-medium text-zinc-500">French</th>
-                  <th className="px-3 py-2 font-medium text-zinc-500">English</th>
+                  <th className="px-3 py-2 font-medium text-zinc-700 dark:text-zinc-200">French</th>
+                  <th className="px-3 py-2 font-medium text-zinc-700 dark:text-zinc-200">English</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
                 {topic.examples.map((ex, i) => (
                   <tr key={i}>
                     <td className="px-3 py-2 font-medium text-zinc-900 dark:text-zinc-100">{ex.fr}</td>
-                    <td className="px-3 py-2 text-zinc-500">{ex.en}</td>
+                    <td className="px-3 py-2 text-zinc-700 dark:text-zinc-200">{ex.en}</td>
                   </tr>
                 ))}
               </tbody>
@@ -97,7 +97,7 @@ export function TopicRunner({
         <ExerciseManager exercises={topic.exercises} onFinished={handleFinished} />
       ) : (
         <Card>
-          <p className="text-sm text-zinc-500">No exercises for this lesson.</p>
+          <p className="text-sm text-zinc-700 dark:text-zinc-200">No exercises for this lesson.</p>
         </Card>
       )}
     </div>

@@ -101,7 +101,7 @@ export function MultipleChoiceView({
       {showSpeak && exercise.audio ? (
         <div className="flex items-center gap-2">
           <SpeakButton text={exercise.audio} />
-          <span className="text-xs text-zinc-500">Tap to listen, then answer.</span>
+          <span className="text-xs text-zinc-700 dark:text-zinc-200">Tap to listen, then answer.</span>
         </div>
       ) : null}
       {exercise.options.map((option, i) => (
@@ -171,7 +171,7 @@ export function FillBlankView({
         <>
           <Feedback correct={correct} explain={exercise.explain} />
           {!correct ? (
-            <p className="text-sm text-zinc-600 dark:text-zinc-300">
+            <p className="text-sm text-zinc-700 dark:text-zinc-300">
               Answer: <strong>{exercise.answer}</strong>
             </p>
           ) : null}
@@ -222,7 +222,7 @@ export function TranslationView({
         <>
           <Feedback correct={correct} explain={exercise.explain} />
           {!correct ? (
-            <p className="text-sm text-zinc-600 dark:text-zinc-300">
+            <p className="text-sm text-zinc-700 dark:text-zinc-300">
               Expected answer: <strong>{exercise.answer}</strong>
             </p>
           ) : null}
@@ -312,7 +312,7 @@ export function OrderingView({
 
   return (
     <div className="flex flex-col gap-3">
-      <p className="text-xs font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+      <p className="text-xs font-medium uppercase tracking-wide text-zinc-700 dark:text-zinc-400">
         Click the words in the correct order
       </p>
       <div className="flex flex-wrap gap-2">
@@ -368,7 +368,7 @@ export function OrderingView({
         <>
           <Feedback correct={correct} />
           {!correct ? (
-            <p className="text-sm text-zinc-600 dark:text-zinc-300">
+            <p className="text-sm text-zinc-700 dark:text-zinc-300">
               Correct order:{" "}
               <strong>
                 {exercise.answer.map((i) => exercise.parts[i]).join(" ")}
@@ -415,7 +415,7 @@ export function PronunciationView({
         <span className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
           {exercise.word}
         </span>
-        <span className="text-sm text-zinc-500">{exercise.ipa}</span>
+        <span className="text-sm text-zinc-700 dark:text-zinc-200">{exercise.ipa}</span>
       </div>
       <div className="flex flex-wrap gap-2">
         <SpeakButton text={exercise.word} label="Listen" />
@@ -429,13 +429,13 @@ export function PronunciationView({
             {listening ? "🎙️ Listening…" : "🎙️ Record"}
           </Button>
         ) : (
-          <span className="text-xs text-zinc-500">
+          <span className="text-xs text-zinc-700 dark:text-zinc-200">
             Speech recognition is not available in this browser.
           </span>
         )}
       </div>
       {result ? (
-        <p className="text-sm text-zinc-600 dark:text-zinc-300">
+        <p className="text-sm text-zinc-700 dark:text-zinc-300">
           You said: <em>{result.transcript}</em>
           {result.confidence > 0 ? ` (confidence ${Math.round(result.confidence * 100)}%)` : ""}
         </p>
@@ -481,7 +481,7 @@ export function ExerciseView({
       return <PronunciationView exercise={exercise} onGrade={onGrade} />;
     default:
       return (
-        <p className="text-sm text-zinc-500">Exercise type not supported.</p>
+        <p className="text-sm text-zinc-700 dark:text-zinc-200">Exercise type not supported.</p>
       );
   }
 }

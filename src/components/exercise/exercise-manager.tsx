@@ -57,7 +57,7 @@ export function ExerciseManager({
         <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
           Exercise complete!
         </h3>
-        <p className="text-sm text-zinc-600 dark:text-zinc-300">
+        <p className="text-sm text-zinc-700 dark:text-zinc-300">
           {correctCount} of {max} correct (
           {Math.round((score / max) * 100)}%)
         </p>
@@ -84,7 +84,7 @@ export function ExerciseManager({
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <Badge tone={skillTone(current.skill)}>{SKILL_LABEL[current.skill]}</Badge>
-          <span className="text-xs text-zinc-500">
+          <span className="text-xs text-zinc-700 dark:text-zinc-200">
             Question {index + 1} / {exercises.length}
           </span>
         </div>

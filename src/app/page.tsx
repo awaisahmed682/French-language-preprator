@@ -85,7 +85,7 @@ export default function Home() {
             >
               <span className="text-3xl">{f.icon}</span>
               <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-50">{f.title}</h3>
-              <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">{f.body}</p>
+              <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{f.body}</p>
             </Card>
           ))}
         </div>
@@ -113,7 +113,7 @@ export default function Home() {
                   {level}
                 </div>
                 <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">{meta.title}</h3>
-                <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">{meta.subtitle}</p>
+                <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-300">{meta.subtitle}</p>
               </div>
             );
           })}
@@ -126,11 +126,11 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-zinc-200 py-8 dark:border-zinc-800">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 text-sm text-zinc-500">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 text-sm text-zinc-700 dark:text-zinc-400">
           <span className="flex items-center gap-2">
             <Logo size={20} /> © {new Date().getFullYear()} Français Prépa
           </span>
-          <Link href="/login" className="hover:text-zinc-700 dark:hover:text-zinc-300">
+          <Link href="/login" className="hover:text-zinc-700 dark:text-zinc-200 dark:hover:text-zinc-300">
             Login
           </Link>
         </div>
