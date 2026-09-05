@@ -35,6 +35,14 @@ export function LoginForm() {
           required
         />
       </Field>
+      <label className="-mt-1 flex cursor-pointer items-center gap-2 text-sm text-zinc-600 dark:text-zinc-300">
+        <input
+          type="checkbox"
+          name="rememberMe"
+          className="h-4 w-4 rounded border-zinc-300 accent-amber-500"
+        />
+        Remember me
+      </label>
       <Button type="submit" disabled={pending} size="lg" className="mt-2 w-full">
         {pending ? "Logging in…" : "Log in"}
       </Button>

@@ -32,6 +32,7 @@ export async function registerAction(
     targetLevel: formData.get("targetLevel") || "C1",
     nativeLanguage: formData.get("nativeLanguage") || "English",
   };
+  const rememberMe = formData.get("rememberMe") === "on";
 
   const parsed = registerSchema.safeParse(raw);
   if (!parsed.success) {
@@ -72,7 +73,7 @@ export async function registerAction(
     },
   });
 
-  await setSessionCookie(user.id);
+  await setSessionCookie(user.id, rememberMe);
   redirect("/dashboard");
 }
 
@@ -82,6 +83,7 @@ export async function loginAction(
 ): Promise<FormState> {
   const email = String(formData.get("email") || "").trim().toLowerCase();
   const password = String(formData.get("password") || "");
+  const rememberMe = formData.get("rememberMe") === "on";
 
   if (!email || !password) {
     return { error: "Enter both email and password." };
@@ -97,7 +99,7 @@ export async function loginAction(
     return { error: "Invalid email or password." };
   }
 
-  await setSessionCookie(user.id);
+  await setSessionCookie(user.id, rememberMe);
   redirect("/dashboard");
 }
 
