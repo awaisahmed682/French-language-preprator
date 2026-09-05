@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { verifyCertificate } from "@/actions/tests";
 import { LEVEL_META, LEVEL_ORDER, type Level } from "@/lib/types";
+import { Logo } from "@/components/brand/logo";
 
 type Params = { code: string };
 export const dynamic = "force-dynamic";
@@ -19,6 +20,9 @@ export default async function CertificatePage({ params }: { params: Promise<Para
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-zinc-100 px-6 py-16 dark:bg-zinc-950">
       <div className="w-full max-w-3xl">
+        <div className="mb-4 flex justify-center">
+            <Logo size={56} />
+          </div>
         <div className="mb-6 text-center">
           <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300">
             ✓ Authentic certificate verified

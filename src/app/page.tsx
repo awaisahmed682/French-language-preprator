@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LEVEL_ORDER, LEVEL_META } from "@/lib/types";
 import { Button, Card } from "@/components/ui/primitives";
+import { Logo } from "@/components/brand/logo";
 
 const FEATURES = [
   {
@@ -44,7 +45,8 @@ export default function Home() {
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(60rem_28rem_at_top_center,rgba(201,163,55,0.14),transparent)]"
         />
         <div className="relative mx-auto max-w-6xl px-6 py-20 text-center sm:py-24">
-          <span className="mb-4 inline-block rounded-full border border-amber-400/40 bg-amber-400/10 px-4 py-1 text-xs font-semibold tracking-wide text-amber-300 uppercase animate-fade-in-up">
+          <Logo size={56} className="mx-auto mb-5 animate-fade-in-up" />
+          <span className="mb-4 inline-block rounded-full border border-amber-400/40 bg-amber-400/10 px-4 py-1 text-xs font-semibold tracking-wide text-amber-300 uppercase animate-fade-in-up [animation-delay:70ms]">
             TEF Canada • TCF Canada • CECRL
           </span>
           <h1 className="mx-auto max-w-3xl text-4xl font-extrabold tracking-tight text-zinc-50 animate-fade-in-up [animation-delay:90ms] sm:text-6xl">
@@ -125,7 +127,9 @@ export default function Home() {
 
       <footer className="border-t border-zinc-200 py-8 dark:border-zinc-800">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 text-sm text-zinc-500">
-          <span>© {new Date().getFullYear()} Français Prépa</span>
+          <span className="flex items-center gap-2">
+            <Logo size={20} /> © {new Date().getFullYear()} Français Prépa
+          </span>
           <Link href="/login" className="hover:text-zinc-700 dark:hover:text-zinc-300">
             Login
           </Link>

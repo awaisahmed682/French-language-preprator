@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Restricted } from "@/components/auth/restricted";
 import { RegisterForm } from "@/components/auth/register-form";
+import { Logo } from "@/components/brand/logo";
 
 export default function RegisterPage() {
   return (
@@ -14,7 +15,8 @@ export default function RegisterPage() {
             ← Back to home
           </Link>
           <div className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm animate-scale-in dark:border-zinc-800 dark:bg-zinc-900">
-            <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">Create an account</h1>
+            <Logo size={56} className="mx-auto mb-4" />
+            <h1 className="text-center text-2xl font-bold text-zinc-900 dark:text-zinc-50">Create an account</h1>
             <p className="mt-1 mb-6 text-sm text-zinc-500">
               Join Français Prépa and start your A1 → C2 journey.
             </p>

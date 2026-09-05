@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { className as cn } from "@/lib/utils";
+import { Logo } from "@/components/brand/logo";
 
 const LINKS = [
   { href: "/dashboard", label: "Dashboard" },
@@ -29,9 +30,7 @@ export function AppNav({
           href="/dashboard"
           className="flex shrink-0 items-center gap-2 text-sm font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50"
         >
-          <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-600 text-xs text-white">
-            FP
-          </span>
+          <Logo size={28} />
           <span className="hidden sm:inline">Français Prépa</span>
         </Link>
         <nav className="flex items-center gap-1 overflow-x-auto">
