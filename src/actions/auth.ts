@@ -108,6 +108,11 @@ export async function logoutAction(): Promise<void> {
   redirect("/");
 }
 
+export async function switchAccountAction(): Promise<void> {
+  await clearSessionCookie();
+  redirect("/login");
+}
+
 export async function setCurrentLevel(level: "A1" | "A2" | "B1" | "B2" | "C1" | "C2") {
   const session = await requireSession();
   await prisma.user.update({
