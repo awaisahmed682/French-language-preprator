@@ -43,7 +43,7 @@ export default async function LevelPortalPage({ params }: { params: Promise<Para
         </div>
       </header>
 
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 [&>a]:min-w-0">
         <Link href={`/levels/${slug}/learn`} className="rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
           <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">📘 Grammar</h2>
           <p className="mt-1 text-sm text-zinc-500">
@@ -70,17 +70,17 @@ export default async function LevelPortalPage({ params }: { params: Promise<Para
 
       <section>
         <h2 className="mb-3 text-xl font-bold text-zinc-900 dark:text-zinc-50">Grammar lessons</h2>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {content.grammar.slice(0, 12).map((topic) => {
             const isDone = completed.has(topic.id);
             return (
               <Link
                 key={topic.id}
                 href={`/levels/${slug}/learn/${topic.id}`}
-                className="rounded-xl border border-zinc-200 bg-white p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
+                className="min-w-0 rounded-xl border border-zinc-200 bg-white p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
               >
                 <div className="flex items-center justify-between gap-2">
-                  <span className="font-medium text-zinc-900 dark:text-zinc-50">{topic.title}</span>
+                  <span className="min-w-0 flex-1 truncate font-medium text-zinc-900 dark:text-zinc-50">{topic.title}</span>
                   <span className={isDone ? "text-emerald-500" : "text-zinc-300"}>{isDone ? "✓" : "○"}</span>
                 </div>
                 <p className="mt-1 truncate text-sm text-zinc-500">{topic.bookChapters}</p>
@@ -94,7 +94,7 @@ export default async function LevelPortalPage({ params }: { params: Promise<Para
         </Link>
       </section>
 
-      <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 [&>a]:min-w-0">
         <MiniLink href={`/levels/${slug}/listening`} icon="🎧" title="Listening comprehension" count={content.listening.length} />
         <MiniLink href={`/levels/${slug}/reading`} icon="📄" title="Reading comprehension" count={content.reading.length} />
         <MiniLink href={`/levels/${slug}/writing`} icon="✍️" title="Writing" count={content.writingPrompts.length} />
